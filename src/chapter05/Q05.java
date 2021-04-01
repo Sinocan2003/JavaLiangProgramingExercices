@@ -3,9 +3,15 @@ package chapter05;
 public class Q05 {
 
 	public static void main(String[] args) {
-		System.out.printf("%12s%12s%7s%9s%12s\n", "Kilometers", "Pounds", "| ", "Mils", "Kilometers");   
-		for (int kilogram = 1; kilogram < 200; ++kilogram) {
-			System.out.printf("%12d%12.2f%7s%9d%12.2f\n", kilogram, (kilogram * 2.2), "| ", 20, (20 * 1.609));
+		System.out.println("Kilograms         Pounds    |   Pounds         Kilogram");
+		
+		int pound2 = 15;
+		for (int kilograms = 1; kilograms <= 199; kilograms += 2) {
+			double pound = kilograms * 2.2;
+			pound2 += 5;
+			double kilogram2 = pound2 / 2.2;
+			System.out.printf("%4d%8s%12.1f%5s%7d%6s%12.2f\n", kilograms, "", pound , "|" , pound2 , "", kilogram2);
+
 		}
 	}
 }

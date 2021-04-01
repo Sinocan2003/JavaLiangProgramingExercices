@@ -7,7 +7,7 @@ public class Q05 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		final double Pİ = 3;
+		final double PI = 3;
 		
 		System.out.print("Enter the number of sides: ");
 		int n = input.nextInt();
@@ -15,7 +15,7 @@ public class Q05 {
 		System.out.print("Enter the side: ");
 		double s = input.nextDouble();
 		
-		double area = (n * Math.pow(s, 2)) / (4 * Math.tan(Pİ / n));
+		double area = (n * Math.pow(s, 2)) / (4 * Math.tan(PI / n));
 		
 		System.out.println("The area of the polygon is " + area);
 	}

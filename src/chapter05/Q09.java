@@ -3,39 +3,44 @@ package chapter05;
 import java.util.Scanner;
 
 public class Q09 {
-	
+
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
-		System.out.print("Enter the number of students: ");
-		int students = input.nextInt();
-		
-		int maxScore = -1;
-		String maxName = "";
 
-		int maxScoreSecond = -1;
-		String maxNameSecond = "";
-		
-		for (int i = 0; i < students; i++) {
+		System.out.print("Enter the number of the students: ");
+		int numberOfStudents = input.nextInt();
+		input.nextLine();
+
+		int i = 1;
+		int maxGrade = 0;
+		int maxGrade2 = 0;
+		String maxGradeName = "";
+		String maxGradeName2 = "";
+		while (i <= numberOfStudents) {
 			System.out.print("Enter the name of the student: ");
-			String name = input.next();
+			String name = input.nextLine();
+
+			System.out.print("Enter the grade of the student: ");
+			int grade = input.nextInt();
+			input.nextLine();
 			
-			System.out.print("Enter the score of the students: ");
-			int score = input.nextInt();
-			
-			if (score > maxScore) {
-				maxScoreSecond = maxScore;
-				maxNameSecond = maxName;
+			if (maxGrade < grade) {
+				maxGrade2 = maxGrade;
+				maxGradeName2 = maxGradeName;
 				
-				maxScore = score;
-				maxName = name;
-			} else if (score > maxScoreSecond) {
-				maxScoreSecond = score;
-				maxNameSecond = name;
+				maxGrade = grade;
+				maxGradeName = name;
+			} else if (maxGrade2 < grade) {
+				maxGrade2 = grade;
+				maxGradeName2 = name;
 			}
+
+			i++;
 		}
-		
-		System.out.println(maxName + " have the max score: " + maxScore + "\n" + 
-		  maxNameSecond + " have the second max score: " + maxScoreSecond);
+
+		System.out.println("The name of the student with the highest score is " + maxGradeName
+				+ " and her or his score is " + maxGrade + "\n" + " and the next student with the 2. highest score is "
+				+ maxGradeName2 + " and his or her score is " + maxGrade2);
+
 	}
 }

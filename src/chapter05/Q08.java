@@ -6,27 +6,32 @@ public class Q08 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
-		System.out.print("Enter the number of students: ");
-		int students = input.nextInt();
-		
-		int maxScore = -1;
-		String maxName = "";
-		
-		for (int i = 0; i < students; i++) {
+
+		System.out.print("Enter the number of the students: ");
+		int numberOfStudents = input.nextInt();
+		input.nextLine();
+
+		int i = 1;
+		int maxGrade = 0;
+		String maxGradeName = "";
+		while (i <= numberOfStudents) {
 			System.out.print("Enter the name of the student: ");
-			String name = input.next();
+			String name = input.nextLine();
 			
-			System.out.print("Enter the score of the students: ");
-			int score = input.nextInt();
+			System.out.print("Enter the grade of the student: ");
+			int grade = input.nextInt();
+			input.nextLine();
 			
-			if (score > maxScore) {
-				maxScore = score;
-				maxName = name;
+			if (maxGrade < grade) {
+				maxGrade = grade;
+				maxGradeName = name;
 			}
-			
+
+			i++;
 		}
-		
-		System.out.println(maxName + " have the max score: " + maxScore);
+
+		System.out.println("The name of the student with the highest score is " + maxGradeName
+				+ " and her or his score is " + maxGrade);
+
 	}
 }
