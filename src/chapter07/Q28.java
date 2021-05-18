@@ -16,12 +16,15 @@ public class Q28 {
 		printCombinations(numbers);
 	}
 
-	public static void combinationsOfTwoNumbers(int[] numbers) {
+	public static void printCombinations(int[] numbers) {
 		for (int i = 0; i < numbers.length; i++) {
-			for (int j = 0; j < numbers.length; j++) {
-				System.out.print("(" + twoNum[i] + "," + numbers[j] + ")" + " ");
+			for (int j = i; j < numbers.length; j++) {
+				if (numbers[i] == numbers[j]) {
+					continue;
+				} else {
+					System.out.println("(" + numbers[i] + "," + numbers[j] + ")" + " ");
+				}
 			}
-			System.out.println();
 		}
 	}
 }
